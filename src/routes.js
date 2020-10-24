@@ -5,29 +5,32 @@ const routes = express.Router();
 //Import controllers
 const authController = require('./Controller/authController');
 const produtoController = require('./Controller/produtoController');
+const ClienteController = require('./Controller/ClienteController');
+const ParceiroController = require('./Controller/ParceiroController');
 
 //---------------------------------------------------------------
-//Customer and Partner authentication and registration routes
-routes.post('/registercustomer', authController.store);
+//Authentication Routes
 routes.post('/authenticatecustomer', authController.loginC);
-//----
-routes.get('/user', authController.show);
-routes.get('/client/show', authController.show);
-routes.get('/partner/show', authController.showP);
-
-routes.post('/registerpartner', authController.storeP);
 routes.post('/authenticatepartner', authController.loginP);
-routes.delete('/del', authController.deluser);
+
+//---------------------------------------------------------------
+//Customer routes
+routes.post('/registercustomer', ClienteController.store);
+
+//---------------------------------------------------------------
+//Partner routes
+routes.post('/registerpartner', ParceiroController.store);
+
 ///-------------------------------------------------------------
 //products routes
 routes.post('/cadprod', produtoController.store)
 routes.get('/getprod', produtoController.show)
 //---------------------------------------------------------------
-//Customer routes
-
-//---------------------------------------------------------------
-//Partner routes
-routes.post('cadproduct');
+//Dev Routes
+routes.delete('/del', authController.deluser);
+routes.get('/user', authController.show);
+routes.get('/client/show', authController.show);
+routes.get('/partner/show', authController.showP);
 
 
 module.exports = routes;

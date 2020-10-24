@@ -25,7 +25,7 @@ module.exports = {
   async show(req, res){
     try{
 
-      const produtos = await Produto.find();
+      const produtos = await Produto.find(req.body);
       console.log(produtos)
       res.send(produtos);
 
