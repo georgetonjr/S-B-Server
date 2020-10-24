@@ -5,7 +5,7 @@ module.exports = {
   //cadastro de clientes
   async store(req, res){
     try{
-      console.log(req);
+      console.log(req.body);
       const { nome, cpf, email, senha, telefone } = req.body
 
       if (await Cliente.findOne({ email })){
