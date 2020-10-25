@@ -10,8 +10,8 @@ const ParceiroController = require('./Controller/ParceiroController');
 
 //---------------------------------------------------------------
 //Authentication Routes
-routes.post('/authenticatecustomer', authController.loginC);
-routes.post('/authenticatepartner', authController.loginP);
+routes.post('/authenticatecustomer', authController.CustomerLogin);
+routes.post('/authenticatepartner', authController.PartnerLogin);
 
 //---------------------------------------------------------------
 //Customer routes
@@ -23,8 +23,8 @@ routes.post('/registerpartner', ParceiroController.store);
 
 ///-------------------------------------------------------------
 //products routes
-routes.post('/cadprod', produtoController.store)
-routes.get('/getprod', produtoController.show)
+routes.post('/cadprod', produtoController.store);
+routes.get('/getprod', produtoController.show);
 //---------------------------------------------------------------
 //Dev Routes
 routes.delete('/del', authController.deluser);
