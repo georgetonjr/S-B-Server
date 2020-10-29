@@ -6,7 +6,7 @@ module.exports = {
   //cadastro de clientes
   async store(req, res){
     try{
-      console.log(req)
+      console.log(req.fileimage)
       const { img, codigo, valor, fabricante, quantestoque, parceiro } = req.body;
 
       /*const produto = await Produto.create({
@@ -18,7 +18,7 @@ module.exports = {
         parceiro
       })*/
       //return res.send({produto}).status(200);
-      //cloudinary.uploader.upload(req.file,{upload_preset: 'productApp'});
+      cloudinary.uploader.upload(req.fileimage,{upload_preset: 'productApp'});
       return res.send('chegou');
     }
     catch{
