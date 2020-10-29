@@ -9,5 +9,13 @@
     "port": "27017",
     "username": "sempremaisbarato",
     "password": "eKeFNG4RL1zvgwdB"
+  },
+
+  "CLOUDINARY": {
+    "CLOUDINARY_NAME": "dtycv9fro",
+    "CLOUDINARY_API_KEY": "242134744166463",
+    "CLOUDINARY_API_SECRET": " mxCg3Ib_sF5K0ygjaDiagQIwfqI "
+
   }
+  
 }

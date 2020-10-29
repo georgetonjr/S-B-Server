@@ -6,15 +6,17 @@ module.exports = {
     try{
       console.log(req)
       const { img, codigo, valor, fabricante, quantestoque, parceiro } = req.body;
-      const produto = await Produto.create({
+
+      /*const produto = await Produto.create({
         img, 
         codigo, 
         valor, 
         fabricante, 
         quantestoque, 
         parceiro
-      })
-      return res.send({produto}).status(200);
+      })*/
+      //return res.send({produto}).status(200);
+      return res.send('chegou');
     }
     catch{
       return res.status(400).send({error: 'Registration failed!!'})
