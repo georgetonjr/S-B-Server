@@ -1,4 +1,6 @@
 const Produto = require('../Models/Produto');
+const {cloudinary} = require('../utils/cloudinary');
+const multer = require('multer');
 
 module.exports = {
   //cadastro de clientes
@@ -16,6 +18,7 @@ module.exports = {
         parceiro
       })*/
       //return res.send({produto}).status(200);
+      //cloudinary.uploader.upload(req.file,{upload_preset: 'productApp'});
       return res.send('chegou');
     }
     catch{

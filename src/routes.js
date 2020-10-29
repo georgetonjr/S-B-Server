@@ -1,6 +1,9 @@
 const express = require('express');
+const multer = require("multer");
 
 const routes = express.Router();
+
+let upload = multer();
 
 //Import controllers
 const authController = require('./Controller/authController');
@@ -23,7 +26,7 @@ routes.post('/registerpartner', ParceiroController.store);
 
 ///-------------------------------------------------------------
 //products routes
-routes.post('/cadprod', produtoController.store);
+routes.post('/cadprod',upload.single('fileimage'), produtoController.store);
 routes.get('/getprod', produtoController.show);
 //---------------------------------------------------------------
 //Dev Routes
