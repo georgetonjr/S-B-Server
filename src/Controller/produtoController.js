@@ -2,11 +2,12 @@ const Produto = require('../Models/Produto');
 const {cloudinary} = require('../utils/cloudinary');
 const multer = require('multer');
 
+
 module.exports = {
   //cadastro de clientes
   async store(req, res){
     try{
-      console.log(req.fileimage)
+      console.log(req.file)
       const { img, codigo, valor, fabricante, quantestoque, parceiro } = req.body;
 
       /*const produto = await Produto.create({

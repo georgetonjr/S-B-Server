@@ -2,8 +2,8 @@ const express = require('express');
 const multer = require("multer");
 
 const routes = express.Router();
-
-let upload = multer();
+const storage = multer.memoryStorage();
+let upload = multer(storage);
 
 //Import controllers
 const authController = require('./Controller/authController');
