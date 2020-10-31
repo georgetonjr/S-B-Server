@@ -1,25 +1,23 @@
 const Produto = require('../Models/Produto');
-const {cloudinary} = require('../utils/cloudinary');
-const multer = require('multer');
+const {uploader, signature} = require('../utils/cloudinary');
+const sharp = require('sharp');
+var Datauri = require('datauri/parser');
+const path = require('path')
 
 
 module.exports = {
   //cadastro de clientes
   async store(req, res){
     try{
-      console.log(req.file)
-      const { img, codigo, valor, fabricante, quantestoque, parceiro } = req.body;
-
-      /*const produto = await Produto.create({
+      const produto = await Produto.create({
         img, 
         codigo, 
         valor, 
         fabricante, 
         quantestoque, 
         parceiro
-      })*/
-      //return res.send({produto}).status(200);
-      cloudinary.uploader.upload(req.fileimage,{upload_preset: 'productApp'});
+      })
+      
       return res.send('chegou');
     }
     catch{
