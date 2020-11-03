@@ -1,9 +1,4 @@
 const Produto = require('../Models/Produto');
-const {uploader, signature} = require('../utils/cloudinary');
-const sharp = require('sharp');
-var Datauri = require('datauri/parser');
-const path = require('path')
-
 
 module.exports = {
   //cadastro de clientes
