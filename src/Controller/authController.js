@@ -5,6 +5,7 @@ module.exports = {
   async CustomerLogin(req, res){
 
     const { cpf, senha } = req.body;
+    console.log(req.body)
 
     const user = await Cliente.findOne({ cpf }).select('+senha');
 
