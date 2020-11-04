@@ -15,7 +15,7 @@ module.exports = {
     if(senha !== user.senha)
       return res.status(400).send({error: 'Invalid Password'});
     
-    res.send(user);
+    res.json(user);
     
   },
 
@@ -30,7 +30,7 @@ module.exports = {
     if(senha == user.senha)
       return res.status(400).send({error: 'Invalid Password'});
     
-    res.send(user);
+    res.json(user);
     
   },
 
