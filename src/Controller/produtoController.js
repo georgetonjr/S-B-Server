@@ -24,8 +24,6 @@ module.exports = {
       }
     });
     console.log('https://productsb.blob.core.windows.net/productsbb/' + filename)
-
-    console.log(req.body)
     
     Produto.create({
       img: 'https://productsb.blob.core.windows.net/productsbb/' + filename, 
@@ -37,7 +35,8 @@ module.exports = {
       parceiro
     })
     .then(() => res.status(200).json('Product successfully registered'))
-    .catch(() => res.status(400).json({error: 'Registration failed!!'}));
+    .catch(e => console.log(e));
+    //.catch(() => res.status(400).json({error: 'Registration failed!!'}));
   },
 
   async show(req, res){
