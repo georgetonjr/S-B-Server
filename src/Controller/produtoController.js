@@ -30,7 +30,8 @@ module.exports = {
     Produto.create({
       img: 'https://productsb.blob.core.windows.net/productsbb/' + filename, 
       codigo, 
-      valor, 
+      valor,
+      tipo, 
       fabricante, 
       quantestoque, 
       parceiro
