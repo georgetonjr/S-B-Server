@@ -1,8 +1,14 @@
 const mongoose = require('mongoose')
 
 const ProdutoSchema = new mongoose.Schema({
+  actve:{
+    type: Boolean,
+    default: true,
+  },
+
   img:{
-    type: String 
+    type: String,
+    required: true,
   },
 
   codigo: {
@@ -13,6 +19,11 @@ const ProdutoSchema = new mongoose.Schema({
   valor: {
     type: String,
     required: true,
+  },
+
+  tipo:{
+    type: String,
+    required: true 
   },
 
   fabricante: {
