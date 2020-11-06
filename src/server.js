@@ -2,7 +2,7 @@
 const express = require('express')
 const cors = require('cors');
 const http = require('http');
-const bodyparser = require('body-parser');
+const bodyParser = require('body-parser');
 const DB = require('./DataBase');
 
 //Importando outros arquivos
@@ -13,6 +13,9 @@ const port = process.env.PORT || config.server.port;
 
 const app = express();
 const server = http.Server(app);
+
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
 
 DB.connect()
 
