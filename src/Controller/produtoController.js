@@ -44,7 +44,7 @@ module.exports = {
 
       const produtos = await Produto.find(req.body);
       console.log(produtos)
-      res.send(produtos);
+      res.json(produtos);
 
     }
     catch{
