@@ -6,7 +6,6 @@ const config = require('../config/config');
 module.exports = {
   //Product create
   async store(req, res){
-    console.log(req);
     const blobSvc = azure.createBlobService(config.containerConnectionString);
     
     let filename = guid.raw().toString() + '.jpg';
