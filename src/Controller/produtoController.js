@@ -43,9 +43,9 @@ module.exports = {
   async show(req, res){
     try{
 
-      const produtos = await Produto.find(req.body);
+      const produtos = await Produto.find();
       console.log(produtos)
-      res.json(produtos);
+      res.json({produtos});
 
     }
     catch{
