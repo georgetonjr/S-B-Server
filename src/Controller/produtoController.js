@@ -24,7 +24,7 @@ module.exports = {
         filename = 'default.png'
       }
     });
-    console.log(filename)
+    console.log('https://productsb.blob.core.windows.net/productsbb/' + filename)
     /*try{
       const produto = await Produto.create({
         img: 'https://productsb.blob.core.windows.net/productsbb/' + filename, 
