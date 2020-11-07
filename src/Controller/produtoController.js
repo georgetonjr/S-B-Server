@@ -61,6 +61,17 @@ module.exports = {
       res.status(400).send({error: 'Falha ao buscar produtos'})
     }
   },
+  //Get products for the partner
+  async showForPartners(req, res){
+    try {
+      const { id } = req.headers;
+      const produtos = await Produto.find({parceiro: id})
+      console.log(produtos)
+      return res.send(produtos)
+    } catch (error) {
+      console.error(error);
+    }
+  },
 
   async update(req, res){
     try{

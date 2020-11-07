@@ -25,6 +25,7 @@ routes.post('/registerpartner', ParceiroController.store);
 //products routes
 routes.post('/cadprod', produtoController.store);
 routes.get('/getprod', produtoController.show);
+routes.get('/getprodpartner', produtoController.showForPartners);
 //---------------------------------------------------------------
 //Dev Routes
 routes.delete('/del', authController.deluser);
