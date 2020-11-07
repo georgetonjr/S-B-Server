@@ -25,6 +25,16 @@ module.exports = {
     });
     console.log('https://productsb.blob.core.windows.net/productsbb/' + filename)
     
+    const
+    {
+      codigo, 
+      valor,
+      tipo, 
+      fabricante, 
+      quantestoque, 
+      parceiro
+    } = req.body;
+
     Produto.create({
       img: 'https://productsb.blob.core.windows.net/productsbb/' + filename, 
       codigo, 
