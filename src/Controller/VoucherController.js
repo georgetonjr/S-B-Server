@@ -8,7 +8,7 @@ module.exports = {
       produto,
       cliente,
     })
-    .then(response => {res.status(200).json({response.id})})
+    .then(voucher => {res.status(200).json({voucher})})
     .catch(error => {return res.status(400).json({ error })})
   },
 }
