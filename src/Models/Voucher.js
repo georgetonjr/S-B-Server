@@ -2,16 +2,26 @@ const mongoose = require('mongoose')
 
 const VoucherSchema = new mongoose.Schema({
   produto: {
-    produto: String,
-    preco: String,
+    type: Array
   },
-  Cliente:{
+  
+  voucherNumber: {
+    type: Number,
+    required: true,
+  },
+
+  cliente:{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Cliente'
   },
   parceiro: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Parceiro'
+  },
+
+  active:{
+    type: Boolean,
+    default: true,
   },
 });
 
