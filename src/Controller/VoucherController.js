@@ -7,9 +7,8 @@ module.exports = {
       parceiro,
       produto,
       cliente,
-      voucherNumber: Math.random(),
     })
-    .then(e => console.log(e))
-    .catch(err => console.error(err))
+    .then(response => {res.status(200).json({response.id})})
+    .catch(error => {return res.status(400).json({ error })})
   },
 }

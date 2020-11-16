@@ -4,11 +4,6 @@ const VoucherSchema = new mongoose.Schema({
   produto: {
     type: Array
   },
-  
-  voucherNumber: {
-    type: Number,
-    required: true,
-  },
 
   cliente:{
     type: mongoose.Schema.Types.ObjectId,
