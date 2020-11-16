@@ -7,6 +7,7 @@ const authController = require('./Controller/authController');
 const produtoController = require('./Controller/produtoController');
 const ClienteController = require('./Controller/ClienteController');
 const ParceiroController = require('./Controller/ParceiroController');
+const VoucherController = require('./Controller/VoucherController');
 
 //---------------------------------------------------------------
 //Authentication Routes
@@ -26,6 +27,9 @@ routes.post('/registerpartner', ParceiroController.store);
 routes.post('/cadprod', produtoController.store);
 routes.get('/getprod', produtoController.show);
 routes.get('/getprodpartner', produtoController.showForPartners);
+//---------------------------------------------------------------
+//Voucher Routes
+routes.post('/voucher/create', VoucherController.store);
 //---------------------------------------------------------------
 //Dev Routes
 routes.delete('/del', authController.deluser);
