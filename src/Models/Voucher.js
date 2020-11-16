@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const VoucherSchema = new mongoose.Schema({
   produto: {
-    type: Array
+    type: Object
   },
 
   cliente:{
