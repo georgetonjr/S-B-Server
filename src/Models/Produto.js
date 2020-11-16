@@ -26,6 +26,11 @@ const ProdutoSchema = new mongoose.Schema({
     required: true 
   },
 
+  mercado:{
+    type: String,
+    required: true 
+  },
+
   fabricante: {
     type: String,
     required:true,

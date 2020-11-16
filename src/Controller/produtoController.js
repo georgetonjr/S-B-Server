@@ -32,7 +32,8 @@ module.exports = {
       tipo, 
       fabricante, 
       quantestoque, 
-      parceiro
+      parceiro,
+      mercado,
     } = req.body;
 
     Produto.create({
@@ -42,7 +43,8 @@ module.exports = {
       tipo, 
       fabricante, 
       quantestoque, 
-      parceiro
+      parceiro,
+      mercado,
     })
     .then(() => res.status(200).json('Product successfully registered'))
     .catch(e => console.log(e));
@@ -53,7 +55,6 @@ module.exports = {
     try{
 
       const produtos = await Produto.find();
-      console.log(produtos)
       res.json(produtos);
 
     }
