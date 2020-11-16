@@ -30,6 +30,8 @@ routes.get('/getprodpartner', produtoController.showForPartners);
 //---------------------------------------------------------------
 //Voucher Routes
 routes.post('/voucher/create', VoucherController.store);
+routes.get('/voucher/getcustomer', VoucherController.getVoucherCustomer);
+routes.get('/voucher/getpartner', VoucherController.getVoucherPartner);
 //---------------------------------------------------------------
 //Dev Routes
 routes.delete('/del', authController.deluser);

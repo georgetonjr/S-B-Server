@@ -11,4 +11,23 @@ module.exports = {
     .then(voucher => {res.status(200).json(voucher)})
     .catch(error => {return res.status(400).json({ error })})
   },
+  async getVoucherCustomer(req, res) {
+    const {_id} = req.headers;
+    try {
+      const voucher = await Voucher.find({_id});
+      return res.status(200).json(voucher)
+    } catch (error) {
+      console.error(error)
+    }
+  },
+  
+  async getVoucherPartner(req, res) {
+    const {_id} = req.headers;
+    try {
+      const voucher = await Voucher.find({_id});
+      return res.status(200).json(voucher)
+    } catch (error) {
+      console.error(error)
+    }
+  },
 }
