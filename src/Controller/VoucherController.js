@@ -2,9 +2,8 @@ const Voucher = require('./../Models/Voucher');
 
 module.exports = {
   async store(req, res){
-    console.log(req.body)
     const { parceiro, cliente, produto } = req.body;
-    Voucher.create({
+    await Voucher.create({
       parceiro,
       produto,
       cliente,
