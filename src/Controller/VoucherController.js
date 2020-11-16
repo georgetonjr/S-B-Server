@@ -14,7 +14,7 @@ module.exports = {
   async getVoucherCustomer(req, res) {
     const {_id} = req.headers;
     try {
-      const voucher = await Voucher.find({_id});
+      const voucher = await Voucher.find({parceiro: _id});
       return res.status(200).json(voucher)
     } catch (error) {
       console.error(error)
@@ -24,7 +24,7 @@ module.exports = {
   async getVoucherPartner(req, res) {
     const {_id} = req.headers;
     try {
-      const voucher = await Voucher.find({_id});
+      const voucher = await Voucher.find({parceiro: _id});
       return res.status(200).json(voucher)
     } catch (error) {
       console.error(error)
