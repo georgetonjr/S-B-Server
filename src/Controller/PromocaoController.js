@@ -1,4 +1,4 @@
-const Promocao = require('./../Models/Voucher');
+const Promocao = require('./../Models/Promocao');
 
 module.exports = {
   async store(req, res){
