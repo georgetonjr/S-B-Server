@@ -35,6 +35,7 @@ module.exports = {
     const {_id} = req.headers;
     try {
       const voucher = await Voucher.findOne({ _id});
+      console.log(voucher)
       return res.status(200).json(voucher)
     } catch (error) {
       console.error(error)
