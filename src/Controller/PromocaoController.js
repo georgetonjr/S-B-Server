@@ -31,4 +31,23 @@ module.exports = {
       console.error(error);
     }
   },
+
+  async getPromo(req, res) {
+    try {
+      const promocao = await Promocao.find({active: true});
+      return res.json(promocao).status(200)
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  async getPromoPartner(req, res) {
+    const {_id} = req.headers;
+    try {
+      const promocao = await Promocao.find({parceiro: id});
+      return res.json(promocao).status(200)
+    } catch (error) {
+      console.error(error);
+    }
+  },
 }

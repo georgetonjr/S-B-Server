@@ -39,6 +39,8 @@ routes.get('/voucher/getpartner', VoucherController.getVoucherPartner);
 //Sale Routes
 routes.post('/promocao/create', PromocaoController.store);
 routes.post('/promocao/status', PromocaoController.statusPromocao);
+routes.get('/promocao/getpromo', PromocaoController.getPromo);
+routes.get('/promocao/getpromopartner', PromocaoController.getPromoPartner);
 //---------------------------------------------------------------
 //Dev Routes
 routes.delete('/del', authController.deluser);

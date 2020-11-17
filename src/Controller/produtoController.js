@@ -67,8 +67,8 @@ module.exports = {
     try {
       const { id } = req.headers;
       const produtos = await Produto.find({parceiro: id})
-      console.log(produtos)
-      return res.json(produtos)
+
+      return res.json(produtos).status(200)
     } catch (error) {
       console.error(error);
     }
