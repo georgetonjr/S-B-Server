@@ -3,7 +3,7 @@ const Promocao = require('./../Models/Voucher');
 module.exports = {
   async store(req, res){
     const { parceiro,
-            produtoid,
+            produto_id,
             valor,
             maxpcliente,
             date,
@@ -12,7 +12,7 @@ module.exports = {
 
     await Promocao.create({
       parceiro,
-      produtoid,
+      produto_id,
       valor,
       maxpcliente,
       date,
