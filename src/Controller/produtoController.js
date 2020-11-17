@@ -81,6 +81,17 @@ module.exports = {
     }catch{
 
     }
-  }
+  },
+
+  async getProdutoPromo(req, res){
+    try {
+      const { _id } = req.headers;
+      const produtos = await Produto.find(_id)
+
+      return res.json(produtos).status(200)
+    } catch (error) {
+      console.error(error);
+    }
+  },
 
 }

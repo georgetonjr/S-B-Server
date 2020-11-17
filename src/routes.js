@@ -4,7 +4,7 @@ const routes = express.Router();
 
 //Import controllers
 const authController = require('./Controller/authController');
-const produtoController = require('./Controller/produtoController');
+const ProdutoController = require('./Controller/produtoController');
 const ClienteController = require('./Controller/ClienteController');
 const ParceiroController = require('./Controller/ParceiroController');
 const VoucherController = require('./Controller/VoucherController');
@@ -27,7 +27,8 @@ routes.post('/registerpartner', ParceiroController.store);
 //products routes
 routes.post('/cadprod', produtoController.store);
 routes.get('/getprod', produtoController.show);
-routes.get('/getprodpartner', produtoController.showForPartners);
+routes.get('/getprodpartner', ProdutoController.showForPartners);
+routes.get('/produto/getprodutopromo', ProdutoController.getProdutoPromo);
 //---------------------------------------------------------------
 //Voucher Routes
 routes.post('/voucher/create', VoucherController.store);
