@@ -8,6 +8,7 @@ module.exports = {
     console.log(req.body)
 
     const user = await Cliente.findOne({ cpf }).select('+senha');
+    console.log(user)
 
     if (!user)
       return res.status(400).send({ error: 'User not found'});
