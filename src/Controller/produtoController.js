@@ -98,7 +98,7 @@ module.exports = {
     console.log(req)
     try {
       const { fabricante } = req.headers;
-      const produtos = await Produto.find({"fabricante": `/ ${fabricante}/`});
+      const produtos = await Produto.find({fabricante: {$regex: "/c/"}});
       console.log(produtos)
       res.status(200).json(produtos);
       
