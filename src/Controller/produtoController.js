@@ -84,7 +84,7 @@ module.exports = {
     const body = req.body
     console.log(body)
     try{
-      const produto = await Produto.findOne({id: body._id});
+      const produto = await Produto.findOne({_id: body._id});
       console.log(produto)
       res.status(200).json(produto);
     } catch (error) {
