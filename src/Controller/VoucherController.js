@@ -1,4 +1,5 @@
 const Voucher = require('./../Models/Voucher');
+const Produto = require('../Models/Produto');
 
 module.exports = {
   async store(req, res){
@@ -45,7 +46,10 @@ module.exports = {
     const {_id} = req.headers;
     try {
       const voucher = await Voucher.findOneAndUpdate(_id,{ active: false } );
-      console.log(voucher); 
+      const estoque = parseInt(produto.quantestoque) - 1
+      const produto = await Produto.findOne({_id: voucher.produto._id});
+      produto.quantestoque = estoque;
+      produto.save()
       return res.status(200).json(voucher)
     } catch (error) {
       console.error(error);
