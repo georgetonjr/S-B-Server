@@ -102,8 +102,10 @@ module.exports = {
     console.log(body)
     try{
       const produto = await Produto.findOne({_id: body._id});
-      produto.actve = !produto.actve;
+      const ativo = produto.actve;
+      produto.actve = ativo === true ? false: true;
       produto.save()
+      console.log(produto)
       res.status(200).json(produto);
     } catch (error) {
       console.error(error);
