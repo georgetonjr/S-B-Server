@@ -24,7 +24,7 @@ module.exports = {
     const { cnpj, senha } = req.body;
     console.log(req.body)
 
-    const user = await Parceiro.findOne({ cnpj }).select('+senha:');
+    const user = await Parceiro.findOne({ cnpj }).select('+senha');
     console.log(user)
     if (!user)
       return res.status(400).send({ error: 'User not found'});
