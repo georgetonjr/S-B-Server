@@ -6,10 +6,8 @@ module.exports = {
   async CustomerLogin(req, res){
 
     const { cpf, senha } = req.body;
-    console.log(req.body)
 
     const user = await Cliente.findOne({ cpf }).select('+senha');
-    console.log(user)
 
     if (!user)
       return res.status(400).json({ error: 'User not found'});
@@ -23,11 +21,8 @@ module.exports = {
 
   async PartnerLogin(req, res){
     const { cnpj, senha } = req.body;
-    console.log(req.body)
-    console.log(md5('12345678'))
 
     const user = await Parceiro.findOne({ cnpj }).select('+senha');
-    console.log(user)
     if (!user)
       return res.status(400).json({ error: 'User not found'});
 
