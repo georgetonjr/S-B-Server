@@ -103,10 +103,10 @@ module.exports = {
   async search(req, res) {
     console.log(req.headers)
     try {
-      const { fabricante } = req.headers;
-      const produtos = await Produto.find({fabricante: {$regex: ".*" + fabricante + ".*"}});
-      console.log(produtos)
-      res.status(200).json(produtos);
+      const { tagName } = req.headers;
+      const tag = await Tag.find({tagName: {$regex: ".*" + tagName + ".*"}});
+      console.log(tag)
+      res.status(200).json(tag);
       
     } catch (error) {
       console.error(error);

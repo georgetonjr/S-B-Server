@@ -10,6 +10,7 @@ const TagSchema = new mongoose.Schema({
   img: {
     type: String,
     required: true,
+    unique: true,
   },
 });
 
