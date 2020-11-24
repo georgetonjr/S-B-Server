@@ -95,15 +95,16 @@ module.exports = {
   },
 
   async search(req, res) {
-    console.log(req)
+    console.log(req.headers)
     try {
       const { fabricante } = req.headers;
-      const produtos = await Produto.find({fabricante: {$regex: "/c/"}});
+      const produtos = await Produto.find({fabricante: {$regex: ".*" + fabricante + ".*"}});
       console.log(produtos)
       res.status(200).json(produtos);
       
     } catch (error) {
       console.error(error);
+      res.status(404).json(error)
     }
   },
 
