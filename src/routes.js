@@ -29,6 +29,7 @@ routes.post('/cadprod', ProdutoController.store);
 routes.get('/getprod', ProdutoController.show);
 routes.get('/getprodpartner', ProdutoController.showForPartners);
 routes.get('/produto/getprodutopromo', ProdutoController.getProdutoPromo);
+routes.get('/produto/search', ProdutoController.search);
 //---------------------------------------------------------------
 //Voucher Routes
 routes.post('/voucher/create', VoucherController.store);

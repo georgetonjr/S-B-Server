@@ -94,4 +94,16 @@ module.exports = {
     }
   },
 
+  async search(req, res) {
+    try {
+      const { search } = req.body;
+      const produtos = await Produto.find({"fabricante": `/ ${search}/`});
+      console.log(produtos)
+      res.status(200).json(produtos);
+      
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
 }
