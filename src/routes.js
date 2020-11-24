@@ -41,6 +41,7 @@ routes.get('/voucher/get', VoucherController.getVoucher);
 routes.post('/voucher/validate', VoucherController.validarVoucher);
 routes.get('/voucher/getcustomer', VoucherController.getVoucherCustomer);
 routes.get('/voucher/getpartner', VoucherController.getVoucherPartner);
+routes.get('/voucher/getpartnerreport', VoucherController.getVoucherPartnerReport);
 //---------------------------------------------------------------
 //Sale Routes
 routes.post('/promocao/create', PromocaoController.store);
