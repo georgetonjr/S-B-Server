@@ -34,7 +34,7 @@ module.exports = {
   async getVoucher(req, res) {
     const {_id} = req.headers;
     try {
-      const voucher = await Voucher.findOne({ _id});
+      const voucher = await Voucher.find({ _id});
       return res.status(200).json(voucher)
     } catch (error) {
       console.error(error)
