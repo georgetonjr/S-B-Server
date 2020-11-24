@@ -1,5 +1,6 @@
 const Cliente = require('./../Models/Cliente');
 const Parceiro = require('../Models/Parceiro');
+const md5 = require('md5');
 
 module.exports = {
   async CustomerLogin(req, res){
@@ -13,7 +14,7 @@ module.exports = {
     if (!user)
       return res.status(400).json({ error: 'User not found'});
 
-    if(senha !== user.senha)
+    if(md5(senha) !== user.senha)
       return res.status(401).json({error: 'Invalid Password'});
     
     res.json(user);
@@ -23,13 +24,14 @@ module.exports = {
   async PartnerLogin(req, res){
     const { cnpj, senha } = req.body;
     console.log(req.body)
+    console.log(md5('12345678'))
 
     const user = await Parceiro.findOne({ cnpj }).select('+senha');
     console.log(user)
     if (!user)
       return res.status(400).json({ error: 'User not found'});
 
-    if(senha !== user.senha)
+    if(md5(senha) !== user.senha)
       return res.status(401).json({error: 'Invalid Password'});
     
     res.json(user);

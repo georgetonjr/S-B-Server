@@ -1,4 +1,5 @@
 const Parceiro = require('./../Models/Parceiro');
+const md5 = require('md5');
 
 module.exports = {
   async store(req, res){
@@ -42,7 +43,7 @@ module.exports = {
         bairro,
         cidade,
         estado,
-        senha
+        senha: md5(senha)
       });
 
       parceiro.senha = undefined;

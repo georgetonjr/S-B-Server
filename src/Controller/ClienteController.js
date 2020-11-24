@@ -1,4 +1,5 @@
 const Cliente = require('./../Models/Cliente');
+const md5 = require('md5');
 
 module.exports = {
   //Customer Register
@@ -18,7 +19,7 @@ module.exports = {
         nome,
         cpf,
         email,
-        senha,
+        senha: md5(senha),
         telefone
       });
 
