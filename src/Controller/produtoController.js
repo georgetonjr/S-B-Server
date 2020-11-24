@@ -97,8 +97,8 @@ module.exports = {
   async search(req, res) {
     console.log(req)
     try {
-      const { search } = req.params;
-      const produtos = await Produto.find({"fabricante": `/ ${search}/`});
+      const { fabricante } = req.headers;
+      const produtos = await Produto.find({"fabricante": `/ ${fabricante}/`});
       console.log(produtos)
       res.status(200).json(produtos);
       
