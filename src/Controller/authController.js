@@ -11,10 +11,10 @@ module.exports = {
     console.log(user)
 
     if (!user)
-      return res.status(400).send({ error: 'User not found'});
+      return res.status(400).json({ error: 'User not found'});
 
     if(senha !== user.senha)
-      return res.status(401).send({error: 'Invalid Password'});
+      return res.status(401).json({error: 'Invalid Password'});
     
     res.json(user);
     
@@ -27,10 +27,10 @@ module.exports = {
     const user = await Parceiro.findOne({ cnpj }).select('+senha');
     console.log(user)
     if (!user)
-      return res.status(400).send({ error: 'User not found'});
+      return res.status(400).json({ error: 'User not found'});
 
     if(senha !== user.senha)
-      return res.status(401).send({error: 'Invalid Password'});
+      return res.status(401).json({error: 'Invalid Password'});
     
     res.json(user);
     
