@@ -81,12 +81,14 @@ module.exports = {
   },
 
   async update(req, res){
-    console.log(req.body)
-    try{
-      //const produto = await Produto.findByIdAndUpdate(req.params.id, req.params.options);
-      res.status(200)
-    }catch{
+    const body = req.body
 
+    try{
+      const produto = await Produto.findByIdAndUpdate({_id: req.body._id},{body});
+      console.log(produto)
+      res.status(200).json(produto);
+    } catch (error) {
+      console.error(error);
     }
   },
 
