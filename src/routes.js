@@ -26,6 +26,7 @@ routes.post('/registerpartner', ParceiroController.store);
 ///-------------------------------------------------------------
 //products routes
 routes.post('/cadprod', ProdutoController.store);
+routes.post('/produto/update', ProdutoController.update);
 routes.get('/getprod', ProdutoController.show);
 routes.get('/getprodpartner', ProdutoController.showForPartners);
 routes.get('/produto/getprodutopromo', ProdutoController.getProdutoPromo);

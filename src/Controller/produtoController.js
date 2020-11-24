@@ -81,9 +81,10 @@ module.exports = {
   },
 
   async update(req, res){
+    console.log(req.body)
     try{
-      const produto = await Produto.findByIdAndUpdate(req.params.id, req.params.options);
-      res.send(produto)
+      //const produto = await Produto.findByIdAndUpdate(req.params.id, req.params.options);
+      res.status(200)
     }catch{
 
     }
