@@ -128,9 +128,9 @@ module.exports = {
 
   async getProdByTag(req, res){
     try {
-      const { tag } = req.headers;
-      const produtos = await Produto.find({fabricante: tag})
-
+      const { fabricante } = req.headers;
+      const produtos = await Produto.find({fabricante})
+      
       return res.json(produtos).status(200);
     } catch (error) {
       console.error(error);
