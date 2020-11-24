@@ -13,8 +13,9 @@ module.exports = {
     if (!user)
       return res.status(400).send({ error: 'User not found'});
 
-    if(senha !== user.senha)
-      return res.status(400).send({error: 'Invalid Password'});
+    if(senha !== user.senha){
+      console.log(user.senha)
+      return res.status(401).send({error: 'Invalid Password'})};
     
     res.json(user);
     
@@ -29,8 +30,9 @@ module.exports = {
     if (!user)
       return res.status(400).send({ error: 'User not found'});
 
-    if(senha == user.senha)
-      return res.status(400).send({error: 'Invalid Password'});
+    if(senha == user.senha){
+      console.log(user.senha)
+      return res.status(401).send({error: 'Invalid Password'})};
     
     res.json(user);
     
