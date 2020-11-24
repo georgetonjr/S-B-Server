@@ -30,6 +30,8 @@ routes.get('/getprod', ProdutoController.show);
 routes.get('/getprodpartner', ProdutoController.showForPartners);
 routes.get('/produto/getprodutopromo', ProdutoController.getProdutoPromo);
 routes.get('/produto/search', ProdutoController.search);
+routes.get('/gettag', ProdutoController.getTag);
+routes.get('/getprodbytag', ProdutoController.getProdByTag);
 //---------------------------------------------------------------
 //Voucher Routes
 routes.post('/voucher/create', VoucherController.store);

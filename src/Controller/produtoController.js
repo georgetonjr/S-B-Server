@@ -1,6 +1,7 @@
 const azure = require('azure-storage');
 const guid = require('guid');
 const Produto = require('../Models/Produto');
+const Tag = require('../Models/Tag')
 const config = require('../config/config');
 
 module.exports = {
@@ -36,6 +37,11 @@ module.exports = {
       mercado,
     } = req.body;
 
+    const tag = await Tag.create({
+      tagName: fabricante,
+      img: 'https://productsb.blob.core.windows.net/productsbb/' + filename, 
+    });
+
     Produto.create({
       img: 'https://productsb.blob.core.windows.net/productsbb/' + filename, 
       codigo, 
@@ -55,7 +61,7 @@ module.exports = {
     try{
 
       const produtos = await Produto.find().populate('parceiro');
-      res.json(produtos);
+      res.json(produtos).status(200);
 
     }
     catch{
@@ -108,4 +114,26 @@ module.exports = {
     }
   },
 
+  async getTag(req, res){
+    try{
+
+      const tags = await Tag.find();
+      res.status(200).json(tags);
+
+    }
+    catch{
+      res.status(400).send({error: 'Falha ao buscar produtos'})
+    }
+  },
+
+  async getProdByTag(req, res){
+    try {
+      const { tag } = req.headers;
+      const produtos = await Produto.find({fabricante: tag})
+
+      return res.json(produtos).status(200);
+    } catch (error) {
+      console.error(error);
+    }
+  },
 }
