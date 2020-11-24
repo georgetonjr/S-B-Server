@@ -85,6 +85,11 @@ module.exports = {
     console.log(body)
     try{
       const produto = await Produto.findOne({_id: body._id});
+      produto.tipo =  body.tipo;
+      produto.fabricante =  body.fabricante;
+      produto.quantestoque= body.quantestoque;
+      produto.valor = body.valor;
+      produto.save()
       console.log(produto)
       res.status(200).json(produto);
     } catch (error) {
