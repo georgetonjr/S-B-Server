@@ -83,6 +83,11 @@ const ParceiroSchema = new mongoose.Schema({
     select: false,
   },
 
+  plano:{
+    type: Boolean,
+    default: false,
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,

@@ -33,6 +33,7 @@ routes.get('/produto/getprodutopromo', ProdutoController.getProdutoPromo);
 routes.get('/produto/search', ProdutoController.search);
 routes.get('/gettag', ProdutoController.getTag);
 routes.get('/getprodbytag', ProdutoController.getProdByTag);
+routes.post('produto/desativar', ProdutoController.desativarProduto);
 //---------------------------------------------------------------
 //Voucher Routes
 routes.post('/voucher/create', VoucherController.store);

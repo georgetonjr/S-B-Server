@@ -90,10 +90,24 @@ module.exports = {
       produto.quantestoque= body.quantestoque;
       produto.valor = body.valor;
       produto.save()
-      console.log(produto)
       res.status(200).json(produto);
     } catch (error) {
       console.error(error);
+      res.status(400)
+    }
+  },
+
+  async desativarProduto(req, res){
+    const body = req.body
+    console.log(body)
+    try{
+      const produto = await Produto.findOne({_id: body._id});
+      produto.actve = !produto.actve;
+      produto.save()
+      res.status(200).json(produto);
+    } catch (error) {
+      console.error(error);
+      res.status(400)
     }
   },
 
