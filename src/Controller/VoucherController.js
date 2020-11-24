@@ -57,8 +57,8 @@ module.exports = {
     const {_id} = req.headers;
     try {
       const voucher = await Voucher.findOneAndUpdate(_id,{ active: false } );
-      const estoque = parseInt(produto.quantestoque) - 1
       const produto = await Produto.findOne({_id: voucher.produto._id});
+      const estoque = parseInt(produto.quantestoque) - 1
       produto.quantestoque = estoque;
       produto.save()
       return res.status(200).json(voucher)
