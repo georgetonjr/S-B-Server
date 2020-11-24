@@ -44,7 +44,7 @@ module.exports = {
   async validarVoucher (req, res){
     const {_id} = req.headers;
     try {
-      const voucher = await Voucher.findOneAndUpdate(_id,{ active: false });
+      const voucher = await Voucher.findOneAndUpdate(_id,{ $set:{ active: false } });
       console.log(voucher); 
       return res.status(200).json(voucher)
     } catch (error) {
