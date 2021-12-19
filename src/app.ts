@@ -1,9 +1,22 @@
-import express from 'express'
-import { router } from './routes'
+import express, { Application, Router } from 'express';
 
-const app = express()
+export class App {
+  public app: Application
 
-app.use(express.json())
-app.use(router)
+  public port: any
 
-export { app }
+  constructor (config: { port: any, router: Router }) {
+    this.port = config.port
+    this.app = express()
+    this.app.use(express.json())
+    this.app.use(config.router);
+  }
+
+  
+
+  public initialize (): void {
+    this.app.listen(this.port, () =>
+      console.log(`App listening on the http://localhost:${this.port}`)
+    )
+  }
+}

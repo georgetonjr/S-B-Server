@@ -1,3 +1,6 @@
-import { app } from "./app"
+import { App } from "./app";
+import { router } from './routes';
 
-app.listen(3333, ()=> console.log(`Listening on port 3333`))
+const app = new App({port: process.env.PORT, router})
+
+app.initialize();
