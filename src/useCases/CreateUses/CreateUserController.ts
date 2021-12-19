@@ -8,14 +8,14 @@ export class CreateUserController {
     const { name, email, password } = req.body
 
     try {
-      this.createUserUseCase.execute({
+      await this.createUserUseCase.execute({
         name,
         email,
         password
       })
       return res.send()
     } catch (err) {
-      return res.json({
+      res.status(409).json({
         message: err.message || 'Erro inesperado'
       })
     }
