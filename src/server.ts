@@ -1,6 +1,6 @@
-import { App } from "./app";
-import { router } from './routes';
+import { App } from './app'
+import { router } from './routes'
 
-const app = new App({port: process.env.PORT, router})
+const app = new App({ port: process.env.PORT, router })
 
-app.initialize();
+app.initialize()

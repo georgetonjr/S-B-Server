@@ -1,3 +1,4 @@
+import * as crypto from 'crypto-js'
 import { User } from './../../entities/User'
 import { IMailProvider } from './../../providers/IMailProvider'
 import { IUsersRepository } from './../../repositories/IUserRepository'
@@ -16,6 +17,8 @@ export class CreateUserUseCase {
       )
 
       if (userAlredyExists) {
+        const senha = crypto.AES.decrypt(userAlredyExists.password, process.env.CRYPTO_KEY).toString(crypto.enc.Utf8)
+        console.log(senha)
         throw new Error('user alredy exists!')
       }
 
