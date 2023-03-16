@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
+    "target": "ES2019",
     "module": "commonjs",
     "outDir": "dist",
     "allowJs": true,
@@ -25,6 +25,12 @@
     }
   },
   "compileOnSave": false,
-  "include": ["**/*.ts", "jest.config.js", "jest.setup.js"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.mock.ts",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
 }

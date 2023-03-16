@@ -1,0 +1,8 @@
+FROM node:lts
+
+WORKDIR /app/src
+
+COPY . .
+
+RUN yarn
+CMD ["yarn", "dev"]

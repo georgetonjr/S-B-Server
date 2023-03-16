@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  sempre-mais-barato.api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sempre-mais-barato.api
+    networks: 
+      - sempre-mais-barato
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - SERVER_PORT=3000
+      - DATABASE_HOST=database
+      - DATABASE_NAME=sempre_mais_barato
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=ROOT
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+
+  database: 
+    image: postgres
+    restart: always
+    container_name: database
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=sempre_mais_barato
+    networks:
+      - sempre-mais-barato
+
+networks:
+  sempre-mais-barato:
+    driver: bridge
